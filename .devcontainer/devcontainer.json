@@ -4,6 +4,9 @@
     "ghcr.io/devcontainers/features/java:1": {
       "version":17,
       "installMaven":true
+    },
+    "ghcr.io/devcontainers-contrib/features/kotlin-sdkman:2": {
+      "jdkVersion":17
     }
   }
 }
