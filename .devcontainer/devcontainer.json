@@ -20,7 +20,8 @@
         "vscjava.vscode-maven",
         "vscjava.vscode-java-dependency",
         "vscjava.vscode-java-test",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "fwcd.kotlin"
       ]
     }
   }
