@@ -9,7 +9,7 @@ import org.bukkit.event.vehicle.VehicleMoveEvent
 import org.bukkit.util.Vector
 import org.bukkit.Particle
 import org.bukkit.event.player.PlayerJoinEvent
-import org.bukkit.entity.SmallFireball
+import org.bukkit.entity.Fireball
 import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import java.util.logging.Logger
@@ -25,7 +25,7 @@ class LittleListener(parent: LittleThings) : Listener {
     )
     val maxParticles = 10
     // Logger instance (will be assigned later)
-    private lateinit var logger: Logger
+    private var logger: Logger
     var playerParkor = mutableMapOf<String, Boolean>()
 
     init {
@@ -126,9 +126,8 @@ class LittleListener(parent: LittleThings) : Listener {
 
                 // Launch a ghast fireball
                 val direction = player.location.direction
-                var fireball = player.launchProjectile(SmallFireball::class.java, direction.multiply(2))
-                fireball.yield = 1F
-                fireball.setIsIncendiary(true);
+                var fireball = player.launchProjectile(Fireball::class.java, direction)
+                fireball.direction = direction.multiply(1.5) // Slow down the fireball a bit
             }
         }
     }
